@@ -290,31 +290,6 @@
   <!--                                                                      -->
   <!--   allowExec           Is use of the exec command enabled? [false]    -->
 
-<!--
-    <servlet>
-        <servlet-name>ssi</servlet-name>
-        <servlet-class>
-          org.apache.catalina.ssi.SSIServlet
-        </servlet-class>
-        <init-param>
-          <param-name>buffered</param-name>
-          <param-value>1</param-value>
-        </init-param>
-        <init-param>
-          <param-name>debug</param-name>
-          <param-value>0</param-value>
-        </init-param>
-        <init-param>
-          <param-name>expires</param-name>
-          <param-value>666</param-value>
-        </init-param>
-        <init-param>
-          <param-name>isVirtualWebappRelative</param-name>
-          <param-value>false</param-value>
-        </init-param>
-        <load-on-startup>4</load-on-startup>
-    </servlet>
--->
 
 
   <!-- Common Gateway Includes (CGI) processing servlet, which supports     -->
@@ -388,21 +363,10 @@
     </servlet-mapping>
 
     <!-- The mapping for the SSI servlet -->
-<!--
-    <servlet-mapping>
-        <servlet-name>ssi</servlet-name>
-        <url-pattern>*.shtml</url-pattern>
-    </servlet-mapping>
--->
 
     <!-- The mapping for the CGI Gateway servlet -->
 
-<!--
-    <servlet-mapping>
-        <servlet-name>cgi</servlet-name>
-        <url-pattern>/cgi-bin/*</url-pattern>
-    </servlet-mapping>
--->
+
 
 
   <!-- ================== Built In Filter Definitions ===================== -->

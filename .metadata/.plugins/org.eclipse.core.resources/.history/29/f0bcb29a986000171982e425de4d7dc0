@@ -1,0 +1,26 @@
+package JdbcUtil;
+import java.sql.*;
+public class JdbcUtil {
+	static{
+		   try{
+		       //Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
+			   Class.forName("com.mysql.jdbc.Driver");
+		   }catch(ClassNotFoundException e){
+			   e.printStackTrace();
+		   }
+		}
+
+		public static Connection getConnection() throws SQLException{
+			return DriverManager.getConnection("jdbc:mysql://localhost/addr","root","");
+		}
+		
+		public static void close(Statement stmt,Connection conn)throws SQLException{
+		     stmt.close();
+			 conn.close();
+		}
+
+		public static void close(ResultSet rs,Statement stmt,Connection conn)throws SQLException{
+		     rs.close();
+			 close(stmt,conn);
+		}
+}

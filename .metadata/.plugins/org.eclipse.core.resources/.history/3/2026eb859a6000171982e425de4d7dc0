@@ -1,0 +1,24 @@
+package dao;
+import java.sql.*;
+import java.util.*;
+
+import entity.*;
+import util.*;
+public class UserInfoDao {
+	public void add(UserInfo userInfo){
+		try{
+			Connection conn = JdbcUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("insert into address (name,street,city,state,zip) values (?,?,?,?,?)");
+			pstmt.setString(1,userInfo.getName());
+			pstmt.setString(2,userInfo.getStreet());
+			pstmt.setString(3,userInfo.getCity());
+			pstmt.setString(4,userInfo.getState());
+			pstmt.setString(5,userInfo.getZip());
+			pstmt.executeUpdate();
+			JdbcUtil.close(pstmt,conn);
+		}catch(SQLException e){
+		    e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+}
