@@ -30,9 +30,9 @@ public class UserInfoServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String path ="userifo.jsp";
+		String path ="userinfo.jsp";
 		List<UserInfo> list = userInfoDao.findAll();
-		request.setAttribute("userinfoList", list);
+		request.setAttribute("list", list);
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}

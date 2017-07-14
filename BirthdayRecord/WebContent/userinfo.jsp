@@ -7,14 +7,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-	<%
-		List<UserInfo> list = (List<UserInfo>)request.getAttribute("list");
-		for(UserInfo userInfo:list){
-		%>
-		<%=userInfo.getId_phone_number() %>,<%=userInfo.getName() %>,<%=userInfo.getPhone() %>,<%=userInfo.getEmail() %>,<%=userInfo.getNickname() %>,<%=userInfo.getPassword() %><br>
-		<%}%>
-	
-	%>
-</body>
+ <body><br>
+       <table border="1">
+       <tr><td>Id_phone_number</td><td>Name</td><td>Phone</td><td>Email</td><td>Nickname</td><td>Password</td></tr>
+       <% 
+            List<UserInfo> list = (List<UserInfo>)request.getAttribute("list");
+            for(UserInfo userInfo: list){
+        %>
+        <tr><td><%=userInfo.getId_phone_number() %></td><td><%=userInfo.getName() %></td><td><%=userInfo.getPhone() %></td><td><%=userInfo.getEmail() %></td><td><%=userInfo.getNickname() %></td><td><%=userInfo.getPassword() %></td>
+        </tr>  
+        <% } %>
+        </table>
+  </body>
+  
 </html>
