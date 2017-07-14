@@ -10,7 +10,7 @@ public class UserInfoDao {
 		try{
 			Connection conn = JdbcUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement("insert into user_infot_table (id_phone_number,name,phone,email,nickname,password) values (?,?,?,?,?,?)");
-			pstmt.setString(1,userInfo.getId_phone_number());
+			pstmt.setLong(1,userInfo.getId_phone_number());
 			pstmt.setString(2,userInfo.getName());
 			pstmt.setString(3,userInfo.getPhone());
 			pstmt.setString(4,userInfo.getEmail());
@@ -32,7 +32,7 @@ public class UserInfoDao {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				UserInfo userInfo = new UserInfo();
-				userInfo.setId_phone_number(rs.getString(1));
+				userInfo.setId_phone_number(rs.getLong(1));
 				userInfo.setName(rs.getString(2));
 				userInfo.setPhone(rs.getString(3));
 				userInfo.setEmail(rs.getString(4));
@@ -50,14 +50,14 @@ public class UserInfoDao {
 		return list;
 	}
 	
-	public UserInfo findById(int id){
+	public UserInfo findById(Long id){
 		UserInfo userInfo = new UserInfo();
 		try{
 			Connection conn = JdbcUtil.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement("select * from user_infot_table where id="+id);
+			PreparedStatement pstmt = conn.prepareStatement("select * from user_infot_table where id_phone_number="+id);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
-				userInfo.setId_phone_number(rs.getString(1));
+				userInfo.setId_phone_number(rs.getLong(1));
 				userInfo.setName(rs.getString(2));
 				userInfo.setName(rs.getString(3));
 				userInfo.setEmail(rs.getString(4));
@@ -72,5 +72,37 @@ public class UserInfoDao {
 
 		return userInfo;
 	}
+	
+	public void delete(Long id){
+		try{
+			Connection conn = JdbcUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("delete from user_infot_table where id_phone_number =?");
+			pstmt.setLong(1,id);
+			pstmt.executeUpdate();
+			JdbcUtil.close(pstmt,conn);
+		}catch(SQLException e){
+		    e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public void update(UserInfo userInfo){
+		try{
+			Connection conn = JdbcUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("update user_infot_table name=?,email=?,nickname=?,password=? where id_phone_number=?");
+			pstmt.setLong(1,userInfo.getId_phone_number());
+			pstmt.setString(2,userInfo.getName());
+			pstmt.setString(3,userInfo.getPhone());
+			pstmt.setString(4,userInfo.getEmail());
+			pstmt.setString(5,userInfo.getNickname());
+			pstmt.setString(6,userInfo.getPassword());
+			pstmt.executeUpdate();
+			JdbcUtil.close(pstmt,conn);
+		}catch(SQLException e){
+		    e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+	}
+	
 	
 }

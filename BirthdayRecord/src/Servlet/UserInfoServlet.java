@@ -30,9 +30,58 @@ public class UserInfoServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		String method = request.getParameter("method");
 		String path ="userinfo.jsp";
-		List<UserInfo> list = userInfoDao.findAll();
-		request.setAttribute("list", list);
+		if(method.equals("list")){
+			
+			List<UserInfo> list = userInfoDao.findAll();
+			request.setAttribute("list", list);
+		}else if(method.equals("add")){
+			
+			String id_phone_number = request.getParameter("phone");
+			String name = request.getParameter("name");
+			String phone = request.getParameter("phone");
+			String email = request.getParameter("email");
+			String nickname = request.getParameter("nickname");
+			String password = request.getParameter("password");
+			UserInfo userInfo = new UserInfo();
+			userInfo.setId_phone_number(Long.parseLong(id_phone_number));
+			userInfo.setName(name);
+			userInfo.setPhone(phone);
+			userInfo.setEmail(email);
+			userInfo.setNickname(nickname);
+			userInfo.setPassword(password);
+			userInfoDao.add(userInfo);
+			path ="UserInfoServlet?method=list";
+		}else if(method.equals("delete")){
+			String  phone = request.getParameter("phone");
+			Long id_phone_number = Long.parseLong(phone);
+			userInfoDao.delete(id_phone_number);
+			path ="UserInfoServlet?method=list";
+		}else if(method.equals("toedit")){
+			   String id_phone_number = request.getParameter("phone");
+			   Long id =  Long.parseLong(id_phone_number);
+	    	   UserInfo userInfo = userInfoDao.findById(id);
+	    	   path="edit.jsp";
+	    	   request.setAttribute("userInfo", userInfo);
+	    }else if(method.equals("edit")){
+			String id_phone_number = request.getParameter("phone");
+			String name = request.getParameter("name");
+			String phone = request.getParameter("phone");
+			String email = request.getParameter("email");
+			String nickname = request.getParameter("nickname");
+			String password = request.getParameter("password");
+			UserInfo userInfo = new UserInfo();
+			userInfo.setId_phone_number(Long.parseLong(id_phone_number));
+			userInfo.setName(name);
+			userInfo.setPhone(phone);
+			userInfo.setEmail(email);
+			userInfo.setNickname(nickname);
+			userInfo.setPassword(password);
+			userInfoDao.update(userInfo);
+	    	path ="UserInfoServlet?method=list";
+	       }
+		
 		request.getRequestDispatcher(path).forward(request, response);
 		
 	}

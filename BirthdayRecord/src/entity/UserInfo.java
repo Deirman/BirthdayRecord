@@ -1,7 +1,7 @@
 package entity;
 
 public class UserInfo {
-	String id_phone_number;
+	Long id_phone_number;
 	String name;
 	String phone;
 	String email;
@@ -9,10 +9,12 @@ public class UserInfo {
 	String password;
 	
 	
-	public String getId_phone_number() {
+	
+
+	public Long getId_phone_number() {
 		return id_phone_number;
 	}
-	public void setId_phone_number(String id_phone_number) {
+	public void setId_phone_number(Long id_phone_number) {
 		this.id_phone_number = id_phone_number;
 	}
 	public String getName() {
