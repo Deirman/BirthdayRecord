@@ -34,9 +34,10 @@ public class UserInfoDao {
 				UserInfo userInfo = new UserInfo();
 				userInfo.setId_phone_number(rs.getString(1));
 				userInfo.setName(rs.getString(2));
-				userInfo.setEmail(rs.getString(3));
-				userInfo.setNickname(rs.getString(4));
-				userInfo.setPassword(rs.getString(5));
+				userInfo.setPhone(rs.getString(3));
+				userInfo.setEmail(rs.getString(4));
+				userInfo.setNickname(rs.getString(6));
+				userInfo.setPassword(rs.getString(7));
 			   list.add(userInfo);
 			}
 
