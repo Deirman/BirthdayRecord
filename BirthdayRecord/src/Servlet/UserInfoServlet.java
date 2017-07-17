@@ -30,6 +30,7 @@ public class UserInfoServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request. setCharacterEncoding("UTF-8");
 		String method = request.getParameter("method");
 		String path ="userinfo.jsp";
 		if(method.equals("list")){
@@ -37,7 +38,6 @@ public class UserInfoServlet extends HttpServlet {
 			List<UserInfo> list = userInfoDao.findAll();
 			request.setAttribute("list", list);
 		}else if(method.equals("add")){
-			
 			String id_phone_number = request.getParameter("phone");
 			String name = request.getParameter("name");
 			String phone = request.getParameter("phone");
