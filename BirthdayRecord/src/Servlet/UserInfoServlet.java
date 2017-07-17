@@ -65,7 +65,7 @@ public class UserInfoServlet extends HttpServlet {
 	    	   path="edit.jsp";
 	    	   request.setAttribute("userInfo", userInfo);
 	    }else if(method.equals("edit")){
-			String id_phone_number = request.getParameter("phone");
+			String id_phone_number = request.getParameter("id_phone_number");
 			String name = request.getParameter("name");
 			String phone = request.getParameter("phone");
 			String email = request.getParameter("email");

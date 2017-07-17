@@ -59,10 +59,10 @@ public class UserInfoDao {
 			if(rs.next()){
 				userInfo.setId_phone_number(rs.getLong(1));
 				userInfo.setName(rs.getString(2));
-				userInfo.setName(rs.getString(3));
+				userInfo.setPhone(rs.getString(3));
 				userInfo.setEmail(rs.getString(4));
-				userInfo.setNickname(rs.getString(5));
-				userInfo.setPassword(rs.getString(6));
+				userInfo.setNickname(rs.getString(6));
+				userInfo.setPassword(rs.getString(7));
 			}
 			JdbcUtil.close(pstmt,conn);
 		}catch(SQLException e){
@@ -89,13 +89,13 @@ public class UserInfoDao {
 	public void update(UserInfo userInfo){
 		try{
 			Connection conn = JdbcUtil.getConnection();
-			PreparedStatement pstmt = conn.prepareStatement("update user_infot_table name=?,email=?,nickname=?,password=? where id_phone_number=?");
-			pstmt.setLong(1,userInfo.getId_phone_number());
-			pstmt.setString(2,userInfo.getName());
-			pstmt.setString(3,userInfo.getPhone());
-			pstmt.setString(4,userInfo.getEmail());
-			pstmt.setString(5,userInfo.getNickname());
-			pstmt.setString(6,userInfo.getPassword());
+			PreparedStatement pstmt = conn.prepareStatement("update user_infot_table SET name=?,Phone=?,email=?,nickname=?,password=? where id_phone_number=?");
+			pstmt.setLong(6,userInfo.getId_phone_number());
+			pstmt.setString(1,userInfo.getName());
+			pstmt.setString(2,userInfo.getPhone());
+			pstmt.setString(3,userInfo.getEmail());
+			pstmt.setString(4,userInfo.getNickname());
+			pstmt.setString(5,userInfo.getPassword());
 			pstmt.executeUpdate();
 			JdbcUtil.close(pstmt,conn);
 		}catch(SQLException e){
