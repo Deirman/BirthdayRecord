@@ -25,8 +25,10 @@ public class UserInfoActionServlet {
         
         // TODO Auto-generated constructor stub
     }
-	@RequestMapping("/getAllStudent")
-	public void getAllStudent(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("/getAllUserInfo")
+	public void getAllUserInfo(HttpServletRequest request, HttpServletResponse response) {
+		
+		
 		List<UserInfo> list = userInfoDao.findAll();
 		ListObject listObject = new ListObject();
 		listObject.setItems(list);
@@ -35,8 +37,8 @@ public class UserInfoActionServlet {
 		ResponseUtils.renderJson(response, JackJsonUtils.toJson(listObject));
 	}
 	
-	@RequestMapping("/getAllStudent.dbo")
-	public ModelAndView getAllStudent(HttpServletRequest request, HttpServletResponse response,ModelMap modelMap) {
+	@RequestMapping("/getAllUserInfo.dbo")
+	public ModelAndView getAllUserInfo(HttpServletRequest request, HttpServletResponse response,ModelMap modelMap) {
 		List<UserInfo> list = userInfoDao.findAll();
 		modelMap.addAttribute("list", list);
 		return new ModelAndView("result",modelMap);

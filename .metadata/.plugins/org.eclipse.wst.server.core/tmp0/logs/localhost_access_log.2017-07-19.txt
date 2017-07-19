@@ -2,3 +2,9 @@
 0:0:0:0:0:0:0:1 - - [19/Jul/2017:11:42:57 +0800] "GET /BirthdayRecord/ HTTP/1.1" 404 1093
 0:0:0:0:0:0:0:1 - - [19/Jul/2017:11:43:46 +0800] "GET /BirthdayRecord/UserInfoServlet?method=list HTTP/1.1" 200 2120
 0:0:0:0:0:0:0:1 - - [19/Jul/2017:11:43:54 +0800] "GET /BirthdayRecord/UserInfoServlet?method=list HTTP/1.1" 200 2120
+127.0.0.1 - - [19/Jul/2017:17:34:04 +0800] "GET / HTTP/1.1" 404 1078
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:17:34:06 +0800] "GET /BirthdayRecord/ HTTP/1.1" 404 1093
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:17:36:25 +0800] "GET /BirthdayRecord/UserInfoActionServlet HTTP/1.1" 404 1114
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:17:36:27 +0800] "GET /BirthdayRecord/UserInfoActionServlet HTTP/1.1" 404 1114
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:17:36:28 +0800] "GET /BirthdayRecord/UserInfoActionServlet HTTP/1.1" 404 1114
+0:0:0:0:0:0:0:1 - - [19/Jul/2017:17:36:28 +0800] "GET /BirthdayRecord/UserInfoActionServlet HTTP/1.1" 404 1114

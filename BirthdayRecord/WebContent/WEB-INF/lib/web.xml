@@ -12,6 +12,18 @@
     <url-pattern>/UserInfoServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>UserInfoActionServlet</servlet-name>
+    <servlet-class>service.UserInfoActionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserInfoActionServlet</servlet-name>
+    <url-pattern>/UserInfoActionServlet</url-pattern>
+  </servlet-mapping>
+  
+  
+  
  <!-- 欢迎页面 -->
  <welcome-file-list>
    <welcome-file>index.jsp</welcome-file>
