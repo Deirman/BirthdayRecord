@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import dao.UserInfoDao;
 import entity.UserInfo;
+import impl.UserInfoServiceImpl;
+import json.JackJsonUtils;
+import json.ListObject;
+import json.ResponseUtils;
 
 /**
  * Servlet implementation class UserInfoServlet
@@ -80,6 +84,13 @@ public class UserInfoServlet extends HttpServlet {
 			userInfo.setPassword(password);
 			userInfoDao.update(userInfo);
 	    	path ="UserInfoServlet?method=list";
+	       }else if(method.equals("getAllUserInfo")){
+	    	List<UserInfo> list = new UserInfoServiceImpl().getAllUserInfo();  
+	   	    ListObject listObject=new ListObject();  
+	   	    listObject.setItems(list);  
+	   	    String responseText = JackJsonUtils.toJson(listObject);  
+	   	    ResponseUtils.renderJson(response, responseText); 
+	   	    return;
 	       }
 		
 		request.getRequestDispatcher(path).forward(request, response);

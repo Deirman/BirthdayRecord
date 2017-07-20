@@ -1,3 +1,0 @@
-127.0.0.1 - - [18/Jul/2017:14:44:23 +0800] "GET / HTTP/1.1" 404 1078
-0:0:0:0:0:0:0:1 - - [18/Jul/2017:14:44:24 +0800] "GET /BirthdayRecord/ HTTP/1.1" 404 1093
-0:0:0:0:0:0:0:1 - - [18/Jul/2017:14:45:35 +0800] "GET /BirthdayRecord/UserInfoServlet?method=list HTTP/1.1" 200 2120

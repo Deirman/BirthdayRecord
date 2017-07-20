@@ -3,6 +3,14 @@
 <fullyQualifiedTypeName name="dao.UserInfoDao"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.bind.v2.schemagen.xmlschema.List"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="json.ListObject"/>
+<fullyQualifiedTypeName name="json.UserInfoCode"/>
+<fullyQualifiedTypeName name="json.JackJsonUtils"/>
+<fullyQualifiedTypeName name="json.ResponseUtils"/>
+<fullyQualifiedTypeName name="service.UserInfoActionServlet"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="entity.UserInfo"/>
+<fullyQualifiedTypeName name="service.UserInfoService"/>
 </qualifiedTypeNameHistroy>

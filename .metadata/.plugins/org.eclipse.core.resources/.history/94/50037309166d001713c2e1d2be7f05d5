@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+
+<servlet>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <servlet-class>Servlet.UserInfoServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserInfoServlet</servlet-name>
+    <url-pattern>/UserInfoServlet</url-pattern>
+  </servlet-mapping>
+  
+<!--   <servlet>
+    <servlet-name>UserInfoActionServlet</servlet-name>
+    <servlet-class>Servlet.UserInfoActionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UserInfoActionServlet</servlet-name>
+    <url-pattern>/UserInfoActionServlet</url-pattern>
+  </servlet-mapping> -->
+  
+  
+  
+ <!-- 欢迎页面 -->
+ <welcome-file-list>
+   <welcome-file>index.jsp</welcome-file>
+ </welcome-file-list>
+ <servlet>  
+        <servlet-name>springDispatcherServlet</servlet-name>  
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+        <!--配置DispatcherServlet的一个初始化参数：配置springmvc的配置文件的路径和名称 -->  
+        <init-param>  
+            <param-name>contextConfigLocation</param-name>  
+            <param-value>classpath:springmvc.xml</param-value>  
+        </init-param>  
+        <load-on-startup>1</load-on-startup>  
+    </servlet>  
+  
+    <!-- Map all requests to the DispatcherServlet for handling -->  
+    <servlet-mapping>  
+        <servlet-name>springDispatcherServlet</servlet-name>  
+        <url-pattern>/</url-pattern>  
+    </servlet-mapping>
+    
+</web-app>
