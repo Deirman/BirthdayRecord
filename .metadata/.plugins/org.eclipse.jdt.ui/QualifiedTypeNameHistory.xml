@@ -13,4 +13,6 @@
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="entity.UserInfo"/>
 <fullyQualifiedTypeName name="service.UserInfoService"/>
+<fullyQualifiedTypeName name="impl.UserInfoServiceImpl"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
 </qualifiedTypeNameHistroy>

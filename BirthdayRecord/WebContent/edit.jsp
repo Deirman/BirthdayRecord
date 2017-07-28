@@ -23,3 +23,8 @@
 </html>
 
    <!-- http://localhost:8080/BirthdayRecord/UserInfoServlet?method=list -->
+   
+   <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/getAllUserInfo -->
+   <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/login?username=4455&password=536333 --> <!-- 登录接口 -->
+   
+   

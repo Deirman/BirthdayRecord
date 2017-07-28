@@ -6,19 +6,20 @@
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="getAllStudent" key="selection"/>
+		<item value="path" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="path"/>
+			<item value="UserInfoActionServlet"/>
 			<item value="getAllStudent"/>
 			<item value="&lt;Connector"/>
 			<item value="&lt;Context"/>
 			<item value="&lt;!----&gt;"/>
 			<item value="&lt;servlet-mapping&gt;"/>
 			<item value="&lt;servlet&gt;"/>
-			<item value="DriverManager"/>
 		</list>
 		<list key="replacehistory">
 		</list>

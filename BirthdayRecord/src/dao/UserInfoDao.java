@@ -73,6 +73,28 @@ public class UserInfoDao {
 		return userInfo;
 	}
 	
+	public UserInfo login(String username,String password){
+		UserInfo userInfo = new UserInfo();
+		try{
+			Connection conn = JdbcUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("select * from user_infot_table where id_phone_number="+"'"+username+"'"+" and password="+"'"+password+"'");
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()){
+				userInfo.setId_phone_number(rs.getLong(1));
+				userInfo.setName(rs.getString(2));
+				userInfo.setPhone(rs.getString(3));
+				userInfo.setEmail(rs.getString(4));
+				userInfo.setNickname(rs.getString(6));
+				userInfo.setPassword(rs.getString(7));
+			}
+			JdbcUtil.close(pstmt,conn);
+		}catch(SQLException e){
+		    e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+		return userInfo;
+	}
+	
 	public void delete(Long id){
 		try{
 			Connection conn = JdbcUtil.getConnection();

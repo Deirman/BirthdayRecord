@@ -3,17 +3,18 @@ package json;
 import java.util.Date;
 
 public class AbstractJsonObject {
-	private String code;  
+	private  int code;  
     //msg  
     private String msg;  
   
     private Long time = new Date().getTime();
 
-	public String getCode() {
+
+	public int getCode() {
 		return code;
 	}
 
-	public void setCode(String code) {
+	public void setCode(int code) {
 		this.code = code;
 	}
 

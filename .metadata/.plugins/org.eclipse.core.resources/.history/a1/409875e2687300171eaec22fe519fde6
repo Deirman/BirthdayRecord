@@ -1,0 +1,22 @@
+package impl;
+
+import java.util.List;
+
+import com.sun.org.apache.xpath.internal.operations.Bool;
+
+import dao.UserInfoDao;
+import entity.UserInfo;
+import service.UserInfoService;
+
+
+public class UserInfoServiceImpl implements UserInfoService{
+	private UserInfoDao userInfoDao = new UserInfoDao();
+	
+	public List<UserInfo> getAllUserInfo() {
+		return userInfoDao.findAll();
+	}
+	
+	public boolean login(String username,String password){
+		return true;
+	}
+}
