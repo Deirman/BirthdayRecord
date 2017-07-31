@@ -1,5 +1,0 @@
-package service;
-import action.UserInfoActionServlet;
-public class UserInfoServiceImpl implements UserInfoActionServlet{
-
-}

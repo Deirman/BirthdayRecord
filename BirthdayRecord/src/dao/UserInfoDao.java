@@ -7,6 +7,7 @@ import entity.*;
 import util.*;
 public class UserInfoDao {
 	public void add(UserInfo userInfo){
+		
 		try{
 			Connection conn = JdbcUtil.getConnection();
 			PreparedStatement pstmt = conn.prepareStatement("insert into user_infot_table (id_phone_number,name,phone,email,nickname,password) values (?,?,?,?,?,?)");
@@ -22,6 +23,31 @@ public class UserInfoDao {
 		    e.printStackTrace();
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public Boolean registered(UserInfo userInfo){
+		boolean results = false;
+		try{
+			Connection conn = JdbcUtil.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement("insert into user_infot_table (id_phone_number,name,phone,email,nickname,password) values (?,?,?,?,?,?)");
+			pstmt.setLong(1,userInfo.getId_phone_number());
+			pstmt.setString(2,userInfo.getName());
+			pstmt.setString(3,userInfo.getPhone());
+			pstmt.setString(4,userInfo.getEmail());
+			pstmt.setString(5,userInfo.getNickname());
+			pstmt.setString(6,userInfo.getPassword());
+			int value = pstmt.executeUpdate();
+			JdbcUtil.close(pstmt,conn);
+			if(value>0){
+				results = true;
+			}else{
+				results = false;
+			}
+		}catch(SQLException e){
+		    e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+		return results;
 	}
 	
 	public List<UserInfo> findAll(){

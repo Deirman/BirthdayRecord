@@ -15,4 +15,6 @@
 <fullyQualifiedTypeName name="service.UserInfoService"/>
 <fullyQualifiedTypeName name="impl.UserInfoServiceImpl"/>
 <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xpath.internal.operations.Bool"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
 </qualifiedTypeNameHistroy>
