@@ -58,10 +58,10 @@ public class UserInfoDao {
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()){
 				UserInfo userInfo = new UserInfo();
-				userInfo.setId_phone_number(rs.getLong(1));
-				userInfo.setName(rs.getString(2));
-				userInfo.setPhone(rs.getString(3));
-				userInfo.setEmail(rs.getString(4));
+				userInfo.setId_phone_number(rs.getLong(2));
+				userInfo.setName(rs.getString(3));
+				userInfo.setPhone(rs.getString(4));
+				userInfo.setEmail(rs.getString(5));
 				userInfo.setNickname(rs.getString(6));
 				userInfo.setPassword(rs.getString(7));
 			   list.add(userInfo);
@@ -83,10 +83,10 @@ public class UserInfoDao {
 			PreparedStatement pstmt = conn.prepareStatement("select * from user_infot_table where id_phone_number="+id);
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
-				userInfo.setId_phone_number(rs.getLong(1));
-				userInfo.setName(rs.getString(2));
-				userInfo.setPhone(rs.getString(3));
-				userInfo.setEmail(rs.getString(4));
+				userInfo.setId_phone_number(rs.getLong(2));
+				userInfo.setName(rs.getString(3));
+				userInfo.setPhone(rs.getString(4));
+				userInfo.setEmail(rs.getString(5));
 				userInfo.setNickname(rs.getString(6));
 				userInfo.setPassword(rs.getString(7));
 			}
@@ -106,12 +106,12 @@ public class UserInfoDao {
 			PreparedStatement pstmt = conn.prepareStatement("select * from user_infot_table where id_phone_number="+"'"+username+"'"+" and password="+"'"+password+"'");
 			ResultSet rs = pstmt.executeQuery();
 			if(rs.next()){
-				userInfo.setId_phone_number(rs.getLong(1));
-				userInfo.setName(rs.getString(2));
-				userInfo.setPhone(rs.getString(3));
-				userInfo.setEmail(rs.getString(4));
-				userInfo.setNickname(rs.getString(6));
-				userInfo.setPassword(rs.getString(7));
+				userInfo.setId_phone_number(rs.getLong(2));
+				userInfo.setName(rs.getString(3));
+				userInfo.setPhone(rs.getString(4));
+				userInfo.setEmail(rs.getString(5));
+				userInfo.setNickname(rs.getString(7));
+				userInfo.setPassword(rs.getString(8));
 			}
 			JdbcUtil.close(pstmt,conn);
 		}catch(SQLException e){
