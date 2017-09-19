@@ -3,6 +3,7 @@ package Servlet;
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 import entity.FriendsInfo;
+import entity.UserInfo;
 import impl.FriendsInfoServiceImpl;
+import impl.UserInfoServiceImpl;
 import json.JackJsonUtils;
 import json.ListObject;
 import json.ResponseUtils;
@@ -52,6 +55,19 @@ public class FriendsInfoServlet {
 			    listObject.setMsg("添加朋友失败");
 			    listObject.setCode(0);
 		    }
+		    String responseText = JackJsonUtils.toJson(listObject);  
+		    ResponseUtils.renderJson(response, responseText); 
+		}
+		
+     //查询朋友生日
+		@RequestMapping(value = "/getFriendsInfo", method=RequestMethod.POST)
+		public void getFriendsInfo(HttpServletRequest request, HttpServletResponse response) {
+			
+			List<FriendsInfo> list = new FriendsInfoServiceImpl().getAllFriendsInfo();  
+		    ListObject listObject=new ListObject();  
+		    listObject.setItems(list);  
+		    listObject.setMsg("获取用户信息成功");
+		    listObject.setCode(1);
 		    String responseText = JackJsonUtils.toJson(listObject);  
 		    ResponseUtils.renderJson(response, responseText); 
 		}
