@@ -17,7 +17,7 @@
         邮件:<input type="text" name="email" value="<%=userInfo.getEmail() %>"><br>
         昵称:<input type="text" name="nickname" value="<%=userInfo.getNickname() %>"><br>
         密码:<input type="text" name="password" value="<%=userInfo.getPassword() %>"><br>
-        <input type="submit" value="修改信息">
+        <input type="submit" value="修改">
      </form>
   </body>
 </html>
