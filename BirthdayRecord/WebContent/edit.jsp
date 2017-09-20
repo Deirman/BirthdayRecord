@@ -22,7 +22,7 @@
   </body>
 </html>
 
-   <!-- http://localhost:8080/BirthdayRecord/UserInfoServlet?method=list --><!-- 用户列表信息获取 111111 -->
+   <!-- http://localhost:8080/BirthdayRecord/UserInfoServlet?method=list --><!-- 用户列表信息获取 -->
    
    <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/getAllUserInfo --> <!-- 获取用户的详情 -->
    <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/login?username=4455&password=536333 --> <!-- 登录接口 -->

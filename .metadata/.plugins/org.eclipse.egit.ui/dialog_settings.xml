@@ -14,9 +14,9 @@
 		<list key="/Users/deirman/Desktop/BirthdayRecord/.git">
 			<item value="false"/>
 			<item value="Deirman &lt;Deirman@41.244.204.221.ty.sx.cn&gt;"/>
-			<item value="Merge commit &apos;d13860c&apos;&#x0A;&#x0A;# Conflicts:&#x0A;#&#x09;.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi&#x0A;"/>
+			<item value="# WARNING: head commit changed in the meantime&#x0D;&#x0D;Merge commit &apos;d13860c&apos;&#x0A;&#x0A;# Conflicts:&#x0A;#&#x09;.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi&#x0A;"/>
 			<item value="Deirman &lt;Deirman@41.244.204.221.ty.sx.cn&gt;"/>
-			<item value="93beee0b3e09e3b5d3418a62c5a0b2e70f6561bd"/>
+			<item value="37386534dc4b94d6b36408f1e4f2eb55a4ec8465"/>
 		</list>
 	</section>
 	<section name="org.eclipse.egit.ui.internal.staging.StagingView">
