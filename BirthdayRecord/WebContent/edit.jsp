@@ -17,14 +17,14 @@
         邮件:<input type="text" name="email" value="<%=userInfo.getEmail() %>"><br>
         昵称:<input type="text" name="nickname" value="<%=userInfo.getNickname() %>"><br>
         密码:<input type="text" name="password" value="<%=userInfo.getPassword() %>"><br>
-        <input type="submit" value="修改">
+        <input type="submit" value="修改信息">
      </form>
   </body>
 </html>
 
    <!-- http://localhost:8080/BirthdayRecord/UserInfoServlet?method=list --><!-- 用户列表信息获取1111111 -->
    
-   <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/getAllUserInfo -->
+   <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/getAllUserInfo --> <!-- 获取用户的详情 -->
    <!-- http://localhost:8080/BirthdayRecord/UserInfosServlet/login?username=4455&password=536333 --> <!-- 登录接口 -->
    
    
